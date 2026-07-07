@@ -1,30 +1,29 @@
-# 🖥️ Lab de Infraestrutura Linux (`servidor-infra-linux`)
+# 🖥️ Linux Infrastructure Lab (`server-infra-linux`)
 
-Este repositório contém a documentação prática e o diário de bordo do meu laboratório de infraestrutura doméstico. O objetivo é registrar as configurações de redes, administração e segurança feitas em um servidor físico antigo utilizando o Ubuntu Server (ambiente CLI).
-
----
-
-# 🏗️ Hardware e Sistema
-*   **Sistema Operacional:** Ubuntu Server (Sem interface gráfica)
-*   **Ambiente:** Máquina antiga dedicada conectada via Wi-Fi (configurada via CLI) à rede local
-
+This repository contains the practical documentation and logbook for my domestic home lab infrastructure. The main goal is to record the networking, administration, and security configurations performed on an old dedicated physical server using Ubuntu Server (CLI environment).
 
 ---
 
-## 🔒 Segurança Aplicada (Hardening)
-
-### 1. Chaves Criptografadas no SSH
-*   **O que foi feito:** Login por senhas comuns desativado no arquivo `/etc/ssh/sshd_config`. O acesso remoto agora exige obrigatoriamente um par de chaves digitais criptografadas.
-
-### 2. Firewall Ativo (UFW)
-*   **O que foi feito:** Configuração de bloqueio total por padrão (`Default Deny`). Apenas o tráfego das seguintes portas foi liberado:
-    *   Porta `22/tcp` (Acesso administrativo SSH)
-    *   Porta `25565/tcp` (Testes de serviços de rede e jogos)
+## 🏗️ Hardware and System Architecture
+*   **Operating System:** Ubuntu Server (Headless / No graphical interface)
+*   **Environment:** Dedicated old machine connected via Wi-Fi (configured entirely via CLI) to the local network.
 
 ---
 
-## 🗺️ Próximas Etapas (Roadmap)
-- [x] Trocar senhas por chaves digitais no SSH
-- [x] Ativar e restringir portas com o Firewall UFW
-- [ ] Instalar o Fail2Ban para bloquear IPs suspeitos automaticamente
-- [ ] Configurar um servidor DNS local leve (Pi-hole)
+## 🔒 Applied Security (Hardening)
+
+### 1. Cryptographic Keys for SSH
+*   **What was done:** Default password-based login was disabled inside the `/etc/ssh/sshd_config` file. Remote access now strictly requires a pair of cryptographic digital keys.
+
+### 2. Active Firewall (UFW)
+*   **What was done:** Configured a total block policy by default (`Default Deny`). Only network traffic from the following specific ports has been allowed:
+    *   Port `22/tcp` (Secure administrative SSH access)
+    *   Port `25565/tcp` (Network traffic testing and gaming services)
+
+---
+
+## 🗺️ Next Steps (Roadmap)
+- [x] Switch from passwords to digital cryptographic keys in SSH
+- [x] Activate and restrict network ports using the UFW Firewall
+- [ ] Install Fail2Ban to automatically block suspicious IP addresses
+- [ ] Configure a lightweight local DNS server (Pi-hole)
